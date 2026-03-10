@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_contenu_sections",
+  "info": {
+    "displayName": "Section"
+  },
+  "options": {},
+  "attributes": {
+    "titre_section": {
+      "type": "string"
+    },
+    "paragraphe": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}
