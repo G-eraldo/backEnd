@@ -4,50 +4,6 @@ module.exports = ({ env }) => {
   const client = env("DATABASE_CLIENT", "sqlite");
 
   const connections = {
-    mysql: {
-      connection: {
-        host: env("DATABASE_HOST", "localhost"),
-        port: env.int("DATABASE_PORT", 3306),
-        database: env("DATABASE_NAME", "strapi"),
-        user: env("DATABASE_USERNAME", "strapi"),
-        password: env("DATABASE_PASSWORD", "strapi"),
-        ssl: env.bool("DATABASE_SSL", false) && {
-          key: env("DATABASE_SSL_KEY", undefined),
-          cert: env("DATABASE_SSL_CERT", undefined),
-          ca: env("DATABASE_SSL_CA", undefined),
-          capath: env("DATABASE_SSL_CAPATH", undefined),
-          cipher: env("DATABASE_SSL_CIPHER", undefined),
-          rejectUnauthorized: env.bool(
-            "DATABASE_SSL_REJECT_UNAUTHORIZED",
-            true,
-          ),
-        },
-      },
-      pool: {
-        min: env.int("DATABASE_POOL_MIN", 2),
-        max: env.int("DATABASE_POOL_MAX", 10),
-      },
-    },
-    postgres: {
-      connection: {
-        // Si DATABASE_URL existe, on l'utilise seule.
-        // Sinon on construit avec les variables individuelles.
-        connectionString: env("DATABASE_URL"),
-        host: env("DATABASE_HOST"),
-        port: env.int("DATABASE_PORT"),
-        database: env("DATABASE_NAME"),
-        user: env("DATABASE_USERNAME"),
-        password: env("DATABASE_PASSWORD"),
-        ssl: env.bool("DATABASE_SSL", false)
-          ? { rejectUnauthorized: false }
-          : false,
-        schema: env("DATABASE_SCHEMA", "public"),
-      },
-      pool: {
-        min: env.int("DATABASE_POOL_MIN", 2),
-        max: env.int("DATABASE_POOL_MAX", 10),
-      },
-    },
     sqlite: {
       connection: {
         filename: path.join(
@@ -57,6 +13,26 @@ module.exports = ({ env }) => {
         ),
       },
       useNullAsDefault: true,
+    },
+    postgres: {
+      connection: {
+        // On essaie d'abord l'URL complète, sinon on prend les variables une par une
+        connectionString: env("DATABASE_URL"),
+        host: env("PGHOST", env("DATABASE_HOST")),
+        port: env.int("PGPORT", env.int("DATABASE_PORT", 5432)),
+        database: env("PGDATABASE", env("DATABASE_NAME")),
+        user: env("PGUSER", env("DATABASE_USERNAME")),
+        password: env("PGPASSWORD", env("DATABASE_PASSWORD")),
+        // Très important pour Railway :
+        ssl: env.bool("DATABASE_SSL", true)
+          ? { rejectUnauthorized: false }
+          : false,
+        schema: env("DATABASE_SCHEMA", "public"),
+      },
+      pool: {
+        min: env.int("DATABASE_POOL_MIN", 2),
+        max: env.int("DATABASE_POOL_MAX", 10),
+      },
     },
   };
 
