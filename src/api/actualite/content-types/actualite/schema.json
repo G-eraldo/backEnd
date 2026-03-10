@@ -32,6 +32,10 @@
       "components": [
         "contenu.section"
       ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titre"
     }
   }
 }
