@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matieres",
+  "info": {
+    "singularName": "matiere",
+    "pluralName": "matieres",
+    "displayName": "College"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "professeur": {
+      "type": "string",
+      "required": true
+    },
+    "ordre": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

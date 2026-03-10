@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "segpas",
+  "info": {
+    "singularName": "segpa",
+    "pluralName": "segpas",
+    "displayName": "Segpa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "professeur": {
+      "type": "string"
+    },
+    "ordre": {
+      "type": "integer"
+    }
+  }
+}

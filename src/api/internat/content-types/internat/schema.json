@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "internats",
+  "info": {
+    "singularName": "internat",
+    "pluralName": "internats",
+    "displayName": "Internat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "personnel": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
