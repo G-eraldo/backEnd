@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "voyages",
+  "info": {
+    "singularName": "voyage",
+    "pluralName": "voyages",
+    "displayName": "Voyage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "contenu": {
+      "type": "dynamiczone",
+      "components": [
+        "contenu.section"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titre"
+    }
+  }
+}
