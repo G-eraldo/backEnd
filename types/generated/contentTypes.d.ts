@@ -608,6 +608,39 @@ export interface ApiSegpaSegpa extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTempsFortTempsFort extends Struct.CollectionTypeSchema {
+  collectionName: 'temps_forts';
+  info: {
+    displayName: 'temps-fort';
+    pluralName: 'temps-forts';
+    singularName: 'temps-fort';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    annee_scolaire: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    end_date: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::temps-fort.temps-fort'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    start_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    titre: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<['temps-fort', 'pont', 'evenement']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
   collectionName: 'videos';
   info: {
@@ -1183,6 +1216,7 @@ declare module '@strapi/strapi' {
       'api::matiere.matiere': ApiMatiereMatiere;
       'api::pdf.pdf': ApiPdfPdf;
       'api::segpa.segpa': ApiSegpaSegpa;
+      'api::temps-fort.temps-fort': ApiTempsFortTempsFort;
       'api::video.video': ApiVideoVideo;
       'api::voyage.voyage': ApiVoyageVoyage;
       'plugin::content-releases.release': PluginContentReleasesRelease;

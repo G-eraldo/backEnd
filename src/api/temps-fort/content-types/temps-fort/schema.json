@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "temps_forts",
+  "info": {
+    "singularName": "temps-fort",
+    "pluralName": "temps-forts",
+    "displayName": "temps-fort"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "temps-fort",
+        "pont",
+        "evenement"
+      ]
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "annee_scolaire": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
