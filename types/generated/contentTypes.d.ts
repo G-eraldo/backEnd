@@ -634,7 +634,9 @@ export interface ApiTempsFortTempsFort extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     start_date: Schema.Attribute.Date & Schema.Attribute.Required;
     titre: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.Enumeration<['temps-fort', 'pont', 'evenement']>;
+    type: Schema.Attribute.Enumeration<
+      ['temps-fort', 'pont', 'evenement', 'voyage', 'epreuve']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

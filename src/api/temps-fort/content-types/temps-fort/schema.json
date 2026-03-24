@@ -20,7 +20,9 @@
       "enum": [
         "temps-fort",
         "pont",
-        "evenement"
+        "evenement",
+        "voyage",
+        "epreuve"
       ]
     },
     "start_date": {
