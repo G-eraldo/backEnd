@@ -445,6 +445,7 @@ export interface ApiActualiteActualite extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    date_evenement: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.String & Schema.Attribute.Required;
     images: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -684,6 +685,7 @@ export interface ApiVoyageVoyage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    date_evenement: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.String & Schema.Attribute.Required;
     images: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

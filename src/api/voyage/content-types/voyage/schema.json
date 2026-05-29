@@ -35,6 +35,10 @@
     "slug": {
       "type": "uid",
       "targetField": "titre"
+    },
+    "date_evenement": {
+      "type": "date",
+      "required": true
     }
   }
 }
