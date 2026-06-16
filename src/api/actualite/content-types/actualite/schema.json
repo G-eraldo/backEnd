@@ -23,19 +23,16 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "contenu": {
       "type": "dynamiczone",
-      "components": [
-        "contenu.section"
-      ]
+      "components": ["contenu.section"]
     },
     "slug": {
       "type": "uid",
-      "targetField": "titre"
+      "targetField": "titre",
+      "required": true
     },
     "date_evenement": {
       "type": "date",
