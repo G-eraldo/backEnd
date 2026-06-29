@@ -457,7 +457,7 @@ export interface ApiActualiteActualite extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date_evenement: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.String & Schema.Attribute.Required;
-    images: Schema.Attribute.Media<'images', true>;
+    images: Schema.Attribute.Media<'images' | 'videos' | 'audios', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -697,7 +697,7 @@ export interface ApiVoyageVoyage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date_evenement: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.String & Schema.Attribute.Required;
-    images: Schema.Attribute.Media<'images', true>;
+    images: Schema.Attribute.Media<'images' | 'videos' | 'audios', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

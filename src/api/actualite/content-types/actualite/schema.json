@@ -23,11 +23,17 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios"
+      ]
     },
     "contenu": {
       "type": "dynamiczone",
-      "components": ["contenu.section"]
+      "components": [
+        "contenu.section"
+      ]
     },
     "slug": {
       "type": "uid",
