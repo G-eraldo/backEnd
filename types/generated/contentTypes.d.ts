@@ -592,6 +592,40 @@ export interface ApiPdfPdf extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPersonnelPersonnel extends Struct.CollectionTypeSchema {
+  collectionName: 'personnels';
+  info: {
+    displayName: 'Personnel';
+    pluralName: 'personnels';
+    singularName: 'personnel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categorie: Schema.Attribute.Enumeration<
+      ['Administratif', 'Vie scolaire', 'Asem', 'Entretien', 'Apprenties']
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::personnel.personnel'
+    > &
+      Schema.Attribute.Private;
+    nom: Schema.Attribute.String & Schema.Attribute.Required;
+    prenom: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSegpaSegpa extends Struct.CollectionTypeSchema {
   collectionName: 'segpas';
   info: {
@@ -1229,6 +1263,7 @@ declare module '@strapi/strapi' {
       'api::internat.internat': ApiInternatInternat;
       'api::matiere.matiere': ApiMatiereMatiere;
       'api::pdf.pdf': ApiPdfPdf;
+      'api::personnel.personnel': ApiPersonnelPersonnel;
       'api::segpa.segpa': ApiSegpaSegpa;
       'api::temps-fort.temps-fort': ApiTempsFortTempsFort;
       'api::video.video': ApiVideoVideo;

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personnels",
+  "info": {
+    "singularName": "personnel",
+    "pluralName": "personnels",
+    "displayName": "Personnel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string"
+    },
+    "categorie": {
+      "type": "enumeration",
+      "enum": [
+        "Administratif",
+        "Vie scolaire",
+        "Asem",
+        "Entretien",
+        "Apprenties"
+      ],
+      "required": true
+    }
+  }
+}
