@@ -48,6 +48,7 @@
     "**/@strapi/types/zod": "4.6.6",
     "**/@strapi/upload/zod": "4.6.6",
     "**/@strapi/utils/zod": "4.6.6",
-    "nodemailer": "10.0.13"
+    "nodemailer": "10.1.4",
+    "@hono/node-server": "1.19.19"
   }
 }
