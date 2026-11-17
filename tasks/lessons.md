@@ -1,1 +1,2 @@
 - Vérifier dans les journaux le moteur de build réellement utilisé avant de corriger une configuration de déploiement ; un Dockerfile ajouté au dépôt ne change pas automatiquement le type de build de l'hébergeur.
+- Générer le Dockerfile avec la version de Nixpacks utilisée en production avant de pousser une modification de son image ou de ses paquets.

@@ -1,3 +1,6 @@
+buildImage = "node:24.22.1-bookworm"
+
 [phases.setup]
-# nodejs_24 = 24.22.2 in this Nixpkgs revision.
-nixpkgsArchive = "2486754ae6ac7c38b6efe3137f41a1fc0f02db30"
+nixPkgs = []
+nixLibs = []
+nixOverlays = []

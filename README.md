@@ -36,8 +36,9 @@ yarn build
 
 ### Dokploy
 
-Le build **Nixpacks** lit `nixpacks.toml`, qui épingle une révision Nixpkgs
-fournissant Node.js 24.22.2. Cette version respecte `engines.node`.
+Le build **Nixpacks** lit `nixpacks.toml` et utilise l'image officielle
+Node.js 24.22.1 sans installer Node depuis Nixpkgs. Cette version respecte
+`engines.node`.
 
 Pour utiliser le build **Dockerfile** à la place, choisir ce type dans Dokploy,
 avec `Dockerfile Path` = `Dockerfile` et `Docker Context Path` = `.`.
