@@ -23,7 +23,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "strapi-provider-email-resend": "^1.0.4",
+    "resend": "6.26.0",
+    "strapi-provider-email-resend": "file:providers/strapi-provider-email-resend",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {},
@@ -34,5 +35,19 @@
   "strapi": {
     "uuid": "61e84d81-e4d0-4f54-b5de-d5ae39f945f8",
     "installId": "e227ebc982e54f95cb35ace419543c2f63573be694a9e2b409542ec259253ec1"
+  },
+  "resolutions": {
+    "**/@strapi/admin/zod": "4.6.6",
+    "**/@strapi/content-manager/zod": "4.6.6",
+    "**/@strapi/content-type-builder/zod": "4.6.6",
+    "**/@strapi/core/zod": "4.6.6",
+    "**/@strapi/email/zod": "4.6.6",
+    "**/@strapi/i18n/zod": "4.6.6",
+    "**/@strapi/openapi/zod": "4.6.6",
+    "**/@strapi/plugin-users-permissions/zod": "4.6.6",
+    "**/@strapi/types/zod": "4.6.6",
+    "**/@strapi/upload/zod": "4.6.6",
+    "**/@strapi/utils/zod": "4.6.6",
+    "nodemailer": "10.0.13"
   }
 }
