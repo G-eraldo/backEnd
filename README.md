@@ -36,12 +36,15 @@ yarn build
 
 ### Dokploy
 
-Pour déployer ce CMS, choisir le type de build **Dockerfile** dans Dokploy,
+Le build **Nixpacks** lit `nixpacks.toml`, qui épingle une révision Nixpkgs
+fournissant Node.js 24.22.2. Cette version respecte `engines.node`.
+
+Pour utiliser le build **Dockerfile** à la place, choisir ce type dans Dokploy,
 avec `Dockerfile Path` = `Dockerfile` et `Docker Context Path` = `.`.
-L'image utilise Node.js 24.22.1, conformément à `.nvmrc` et à `engines.node`.
-Conserver les variables sensibles dans l'onglet **Environment** de Dokploy ;
-elles sont lues au démarrage du conteneur et ne doivent pas être ajoutées aux
-arguments de build. Le service écoute sur le port `1337`.
+L'image Docker utilise Node.js 24.22.1, conformément à `.nvmrc`.
+En mode Dockerfile, conserver les variables sensibles comme variables d'exécution
+dans l'onglet **Environment** de Dokploy, sans les ajouter aux arguments de build.
+Le service écoute sur le port `1337`.
 
 Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
 

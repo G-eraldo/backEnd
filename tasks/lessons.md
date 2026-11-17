@@ -1,0 +1,1 @@
+- Vérifier dans les journaux le moteur de build réellement utilisé avant de corriger une configuration de déploiement ; un Dockerfile ajouté au dépôt ne change pas automatiquement le type de build de l'hébergeur.
