@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+!.env.example
+node_modules
+build
+dist
+.strapi
+.strapi-updater.json
+.strapi-cloud.json
+public/uploads/*
+!public/uploads/.gitkeep
+*.log
+.DS_Store
